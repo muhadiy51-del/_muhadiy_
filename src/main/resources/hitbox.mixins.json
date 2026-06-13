@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.hitbox",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": ["HitboxMixin"],
+  "client": [],
+  "injectors": {"defaultRequire": 1}
+}
