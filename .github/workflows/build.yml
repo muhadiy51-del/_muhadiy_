@@ -10,7 +10,7 @@ jobs:
           java-version: '21'
           distribution: 'microsoft'
       - run: ./gradlew build
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: hitbox-mod
           path: build/libs/*.jar
