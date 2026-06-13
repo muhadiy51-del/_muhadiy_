@@ -7,9 +7,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Entity.class)
 public abstract class HitboxMixin {
-    @Inject(at = @At("RETURN"), method = "getBoundingBox", cancellable = true)
-    private void bigHitbox(CallbackInfoReturnable<Box> cir) {
-        Box box = cir.getReturnValue();
-        cir.setReturnValue(box.expand(0.5));
+    @Inject(method = "getBoundingBox", at = @At("RETURN"), cancellable = true)
+    private void expandHitbox(CallbackInfoReturnable<Box> cir) {
+        cir.setReturnValue(cir.getReturnValue().expand(0.5));
     }
 }
